@@ -1,6 +1,6 @@
 name: flutter_date_difference
 description: Calculates the difference between two dates. It allows customization.
-version: 1.0.0
+version: 1.0.1
 homepage: https://erbasaran.com
 repository: https://github.com/erbasaran/flutter_date_difference
 issue_tracker: https://github.com/erbasaran/flutter_date_difference/issues

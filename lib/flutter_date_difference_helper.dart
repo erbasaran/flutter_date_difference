@@ -1,18 +1,44 @@
 class FlutterDateDifferenceHelper {
-  static String? _now,
+  ///Custom texts
+  static String?
+
+      ///Text for Now
+      _now,
+
+      ///Text for Year
       _year,
+
+      ///Text for Years
       _yearPlural,
+
+      ///Text for Month
       _month,
+
+      ///Text for Months
       _monthPlural,
+
+      ///Text for Day
       _day,
+
+      ///Text for Days
       _dayPlural,
+
+      ///Text for Hour
       _hour,
+
+      ///Text for Hours
       _hourPlural,
+
+      ///Text for Minute
       _minute,
+
+      ///Text for Minutes
       _minutePlural;
 
+  ///Default language code
   static String _language = "en";
 
+  ///Supported language list
   static const Map<String, Map<String, String>> _local = {
     'en': {
       'Now': 'Now',
@@ -94,19 +120,42 @@ class FlutterDateDifferenceHelper {
     }
   };
 
+  ///Arabic numbers
   static const List<String> _arabicNumbers = [
+    ///0
     '٠',
+
+    ///1
     '١',
+
+    ///2
     '٢',
+
+    ///3
     '٣',
+
+    ///4
     '٤',
+
+    ///5
     '٥',
+
+    ///6
     '٦',
+
+    ///7
     '٧',
+
+    ///8
     '٨',
+
+    ///9
     '٩'
   ];
 
+  ///[String] method [toArabicNumber]
+  ///takes the number
+  ///and return [String] value arabicNumber
   static String toArabicNumber(int number) {
     StringBuffer sBuffer = StringBuffer();
     number.toString().runes.forEach((rune) {
@@ -115,6 +164,9 @@ class FlutterDateDifferenceHelper {
     return sBuffer.toString();
   }
 
+  ///[int] method [getDayCountInMonth]
+  ///takes year and month
+  ///and return [int] value dayCountInMonth
   static int getDayCountInMonth(int year, int month) {
     return [
       31,
@@ -132,6 +184,7 @@ class FlutterDateDifferenceHelper {
     ][month - 1];
   }
 
+  ///Set language
   static void setLanguage(String language) {
     language = language.split("_")[0].toLowerCase().trim();
     if (_local.keys.toList().contains(language)) {
@@ -139,18 +192,19 @@ class FlutterDateDifferenceHelper {
     }
   }
 
+  ///Set texts
   static void setTexts(
       {String? now,
-        String? year,
-        String? yearPlural,
-        String? month,
-        String? monthPlural,
-        String? day,
-        String? dayPlural,
-        String? hour,
-        String? hourPlural,
-        String? minute,
-        String? minutePlural}) {
+      String? year,
+      String? yearPlural,
+      String? month,
+      String? monthPlural,
+      String? day,
+      String? dayPlural,
+      String? hour,
+      String? hourPlural,
+      String? minute,
+      String? minutePlural}) {
     if (now != null) {
       _now = now;
     }
@@ -186,6 +240,9 @@ class FlutterDateDifferenceHelper {
     }
   }
 
+  ///[String] method [countsToString]
+  ///takes yearCount,monthCount and dayCount
+  ///and return [int] value differenceText
   static String countsToString(int yearCount, int monthCount, int dayCount,
       int hourCount, int minuteCount) {
     if (yearCount == 0 && monthCount == 0 && dayCount == 0) {

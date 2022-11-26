@@ -4,27 +4,31 @@ import 'dart:io';
 
 import 'flutter_date_difference_helper.dart';
 
+///[FlutterDateDifference] IS a Main Class
 class FlutterDateDifference {
+  ///[FlutterDateDifference] constructor
   FlutterDateDifference({String? language}) {
     FlutterDateDifferenceHelper.setLanguage((language ?? Platform.localeName));
   }
 
-  setLanguage({required String language}) {
+  ///Set language
+  void setLanguage({required String language}) {
     FlutterDateDifferenceHelper.setLanguage(language);
   }
 
-  setTexts(
+  ///Set texts
+  void setTexts(
       {String? now,
-        String? year,
-        String? yearPlural,
-        String? month,
-        String? monthPlural,
-        String? day,
-        String? dayPlural,
-        String? hour,
-        String? hourPlural,
-        String? minute,
-        String? minutePlural}) {
+      String? year,
+      String? yearPlural,
+      String? month,
+      String? monthPlural,
+      String? day,
+      String? dayPlural,
+      String? hour,
+      String? hourPlural,
+      String? minute,
+      String? minutePlural}) {
     FlutterDateDifferenceHelper.setTexts(
         now: now,
         year: year,
@@ -39,6 +43,9 @@ class FlutterDateDifference {
         minutePlural: minutePlural);
   }
 
+  ///[String] method [calculate]
+  ///takes date1 and date2
+  ///and return [String] value Date Difference
   String calculate(DateTime date1, DateTime date2) {
     var oldDate = date1.isBefore(date2) ? date1 : date2;
     var newDate = date1.isAfter(date2) ? date1 : date2;
@@ -62,8 +69,8 @@ class FlutterDateDifference {
           oldDate = DateTime(oldDate.year + 1, oldDate.month, oldDate.day);
           yearCount++;
         } else if ((oldDate.month == 12
-            ? DateTime(oldDate.year + 1, 1, oldDate.day)
-            : DateTime(oldDate.year, oldDate.month + 1, oldDate.day))
+                ? DateTime(oldDate.year + 1, 1, oldDate.day)
+                : DateTime(oldDate.year, oldDate.month + 1, oldDate.day))
             .isBefore(newDate)) {
           oldDate = oldDate.month == 12
               ? DateTime(oldDate.year + 1, 1, oldDate.day)
@@ -71,11 +78,11 @@ class FlutterDateDifference {
           monthCount++;
         } else {
           if (FlutterDateDifferenceHelper.getDayCountInMonth(
-              oldDate.year, oldDate.month) <
+                  oldDate.year, oldDate.month) <
               oldDate.day + 1) {
             if ((oldDate.month + monthCount == 12
-                ? DateTime(oldDate.year + 1, 1, 1)
-                : DateTime(oldDate.year, oldDate.month + 1, 1))
+                    ? DateTime(oldDate.year + 1, 1, 1)
+                    : DateTime(oldDate.year, oldDate.month + 1, 1))
                 .isBefore(newDate)) {
               oldDate = oldDate.month + monthCount == 12
                   ? DateTime(oldDate.year + 1, 1, 1)

@@ -117,6 +117,71 @@ class FlutterDateDifferenceHelper {
       'Hours': 'ساعات',
       'Minute': 'دقيقة',
       'Minutes': 'دقائق'
+    },
+    'pt': {
+      'Now': 'Agora',
+      'Year': 'Ano',
+      'Years': 'Anos',
+      'Month': 'Mês',
+      'Months': 'Meses',
+      'Day': 'Dia',
+      'Days': 'Dias',
+      'Hour': 'Hora',
+      'Hours': 'Horas',
+      'Minute': 'Minuto',
+      'Minutes': 'Minutos'
+    },
+    'es': {
+      'Now': 'Ahora',
+      'Year': 'Año',
+      'Years': 'Años',
+      'Month': 'Mes',
+      'Months': 'Meses',
+      'Day': 'Día',
+      'Days': 'Días',
+      'Hour': 'Hora',
+      'Hours': 'Horas',
+      'Minute': 'Minuto',
+      'Minutes': 'Minutos'
+    },
+    'hi': {
+      'Now': 'अब',
+      'Year': 'साल',
+      'Years': 'साल',
+      'Month': 'महीना',
+      'Months': 'महीने',
+      'Day': 'दिन',
+      'Days': 'दिन',
+      'Hour': 'घंटा',
+      'Hours': 'घंटे',
+      'Minute': 'मिनट',
+      'Minutes': 'मिनट'
+    },
+    'ru': {
+      'Now': 'Сейчас',
+      'Year': 'Год',
+      'Years': 'Годы',
+      'Month': 'Месяц',
+      'Months': 'Месяцы',
+      'Day': 'День',
+      'Days': 'Дни',
+      'Hour': 'Час',
+      'Hours': 'Часы',
+      'Minute': 'Минута',
+      'Minutes': 'Минуты'
+    },
+    'ja': {
+      'Now': '今',
+      'Year': '年',
+      'Years': '年',
+      'Month': '月',
+      'Months': '月',
+      'Day': '日',
+      'Days': '日',
+      'Hour': '時',
+      'Hours': '時',
+      'Minute': '分',
+      'Minutes': '分'
     }
   };
 
@@ -168,20 +233,7 @@ class FlutterDateDifferenceHelper {
   ///takes year and month
   ///and return [int] value dayCountInMonth
   static int getDayCountInMonth(int year, int month) {
-    return [
-      31,
-      year % 4 == 0 ? 29 : 28,
-      31,
-      30,
-      31,
-      30,
-      31,
-      31,
-      30,
-      31,
-      30,
-      31
-    ][month - 1];
+    return [31, year % 4 == 0 ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
   }
 
   ///Set language
@@ -243,8 +295,7 @@ class FlutterDateDifferenceHelper {
   ///[String] method [countsToString]
   ///takes yearCount,monthCount and dayCount
   ///and return [int] value differenceText
-  static String countsToString(int yearCount, int monthCount, int dayCount,
-      int hourCount, int minuteCount) {
+  static String countsToString(int yearCount, int monthCount, int dayCount, int hourCount, int minuteCount) {
     if (yearCount == 0 && monthCount == 0 && dayCount == 0) {
       if (hourCount == 0 && minuteCount == 0) {
         return _now ?? _local[_language]!["Now"]!;

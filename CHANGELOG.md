@@ -1,3 +1,7 @@
+## 1.0.2
+ -Added support for web
+ -new languages: portuguese(pt), spanish(es), russian(ru), japanese(ja), hindi(hi)
+
 ## 1.0.1
 
 - Description edited.

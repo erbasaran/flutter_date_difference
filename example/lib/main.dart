@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _dateDifference = FlutterDateDifference(language: "en");
+  final _dateDifference = FlutterDateDifference();
 
   late DateTime dt1;
   late DateTime dt2;

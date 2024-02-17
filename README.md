@@ -29,9 +29,14 @@ Published Package on pub.dev
     _dateDifference.setTexts(year: "Year", yearPlural: "Years", month: "Month", monthPlural: "Months", day: "Day", dayPlural: "Days");
 ```
 ##### Ready Languages
-    en // Default
-    tr
-    de
-    fr
-    it
-    ar
+    en (english) // Default
+    tr (turkish)
+    de (german)
+    fr (french)
+    it (italian)
+    ar (arabic)
+    pt (portuguese)
+    es (spanish)
+    ja (japanese)
+    ru (russian)
+    hi (hindi)
